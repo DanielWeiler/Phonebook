@@ -4,7 +4,9 @@
   "description": "Part 3 of Full-Stack-Web-Development-Course",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/DanielWeiler/Phonebook/issues"
   },
-  "homepage": "https://github.com/DanielWeiler/Phonebook#readme"
+  "homepage": "https://github.com/DanielWeiler/Phonebook#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.8"
+  }
 }
