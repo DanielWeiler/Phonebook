@@ -46,10 +46,6 @@ const errorHandler = (error, request, response, next) => {
     }
 ] */
 
-app.get('/', (request, response) => {
-    response.send('<h1>Hello World!</h1>')
-})
-
 app.get('/info', (request, response) => {
   const time = new Date()
   response.send(`<p>Phonebook has info for ${persons.length} people</p> ${time}`)
@@ -145,7 +141,7 @@ app.use(unknownEndpoint)
 
 app.use(errorHandler)
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
