@@ -11,6 +11,16 @@ app.use(express.json())
 morgan.token('person', (req, res) => JSON.stringify(req.body))
 app.use(morgan(':method :url :status :res[content-length] :response-time ms :person'))
 
+const errorHandler = (error, request, response, next) => {
+  console.error(error.message)
+
+  if (error.name === 'CastError') {
+    return response.status(400).send({ error: 'malformatted id' })
+  }
+
+  next(error)
+}
+
 /* let persons = [
     { 
         "id": 1,
