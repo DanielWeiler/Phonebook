@@ -1,8 +1,10 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const express = require("express")
 const app = express()
 const morgan = require("morgan")
 const cors = require("cors")
-require("dotenv").config()
 const Person = require("./models/person")
 
 app.use(express.static("build"))
