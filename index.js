@@ -46,7 +46,9 @@ const errorHandler = (error, request, response, next) => {
 
 app.get('/info', (request, response) => {
   const time = new Date()
-  response.send(`<p>Phonebook has info for ${persons.length} people</p> ${time}`)
+  Person.find({}).then(persons => {
+    response.send(`<p>Phonebook has info for ${persons.length} people</p> ${time}`)
+  })
 })
 
 app.get('/api/persons', (request, response) => {
